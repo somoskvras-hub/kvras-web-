@@ -50,8 +50,8 @@ export async function POST(req: NextRequest) {
           Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
         },
         body: JSON.stringify({
-          from: "KVRAS Web <noreply@kvras.cl>",
-          to: ["hola@kvras.cl"],
+          from: "KVRAS Web <onboarding@resend.dev>",
+          to: ["somos.kvras@gmail.com"],
           subject: `Nuevo contacto: ${name}${brand ? ` — ${brand}` : ""}`,
           html: `
             <h2>Nuevo mensaje desde kvras.cl</h2>
