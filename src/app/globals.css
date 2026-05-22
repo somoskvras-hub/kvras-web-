@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --font-bebas: 'Bebas Neue', sans-serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+
+  /* Brand tokens */
+  --bg: oklch(0.13 0.06 320);
+  --fg: oklch(0.97 0.01 320);
+  --card: oklch(0.17 0.08 320);
+  --muted-fg: oklch(0.72 0.04 320);
+  --border: oklch(0.3 0.08 320 / 50%);
+  --accent: oklch(0.88 0.18 95);
+  --accent-fg: oklch(0.13 0.06 320);
+  --orange: oklch(0.75 0.19 50);
+  --pink: oklch(0.82 0.10 350);
+  --purple-deep: oklch(0.22 0.13 320);
+
+  /* Gradients */
+  --grad-warm: linear-gradient(135deg, oklch(0.75 0.19 50), oklch(0.88 0.18 95));
+  --grad-social: linear-gradient(135deg, oklch(0.78 0.16 350) 0%, oklch(0.62 0.20 340) 45%, oklch(0.32 0.18 320) 100%);
+  --grad-glow: linear-gradient(135deg, oklch(0.35 0.18 320), oklch(0.82 0.10 350));
+  --grad-yp: linear-gradient(110deg, oklch(0.92 0.14 95) 0%, oklch(0.92 0.14 95) 38%, oklch(0.62 0.20 340) 38%, oklch(0.62 0.20 340) 100%);
+  --shadow-glow: 0 0 80px oklch(0.75 0.19 50 / 0.35);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--orange);
+  color: var(--purple-deep);
+}
+
+/* Utilities */
+.font-display { font-family: var(--font-bebas); letter-spacing: 0.01em; }
+
+.text-grad {
+  background: var(--grad-warm);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-grad-warm { background: var(--grad-warm); }
+.bg-grad-social { background: var(--grad-social); }
+.bg-grad-yp { background: var(--grad-yp); }
+.shadow-glow { box-shadow: var(--shadow-glow); }
+
+/* Grain overlay */
+.grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hero entrance */
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes revealScale {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes pulseTxt {
+  0%, 100% { text-shadow: 0 0 40px oklch(0.88 0.18 95 / 0.4); }
+  50%       { text-shadow: 0 0 80px oklch(0.88 0.18 95 / 0.7); }
+}
+
+.anim-reveal-up   { animation: revealUp 0.7s ease both; }
+.anim-reveal-scale { animation: revealScale 0.8s ease both; }
+.anim-pulse-txt   { animation: pulseTxt 3s ease-in-out infinite; }
