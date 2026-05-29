@@ -13,7 +13,10 @@ const MARQUEE_ITEMS = [
 
 export function Hero() {
   const [y, setY] = useState(0);
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    setMounted(true);
     const onScroll = () => setY(window.scrollY);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -31,23 +34,23 @@ export function Hero() {
 
         {/* Text */}
         <div className="md:col-span-7">
-          <div className="flex items-center gap-3 mb-5" style={{ animation: "revealUp 0.7s 0.1s ease both" }}>
+          <div className="flex items-center gap-3 mb-5">
             <span className="h-px w-12 bg-[oklch(0.88_0.18_95)]" />
             <span className="text-xs uppercase tracking-[0.4em] text-white">Central Creativa</span>
           </div>
 
-          <h1 className="font-display leading-[0.82] tracking-tight" style={{ animation: "revealUp 0.7s 0.2s ease both" }}>
+          <h1 className="font-display leading-[0.82] tracking-tight">
             <span className="block text-[clamp(3.5rem,13vw,9rem)] drop-shadow-[0_4px_24px_rgba(0,0,0,0.35)]">ES</span>
             <span className="block text-[clamp(3.5rem,13vw,9rem)] text-[oklch(0.88_0.18_95)] italic anim-pulse-txt">ACTITUD</span>
             <span className="mt-3 block font-body text-xs uppercase tracking-[0.6em] text-white">· Central Creativa ·</span>
           </h1>
 
-          <p className="mt-8 max-w-md text-base md:text-lg text-white/85" style={{ animation: "revealUp 0.7s 0.35s ease both" }}>
+          <p className="mt-8 max-w-md text-base md:text-lg text-white/85">
             No es falta de ideas. Es falta de dirección.<br />
             Convertimos marcas en experiencias que conectan.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-6" style={{ animation: "revealUp 0.7s 0.5s ease both" }}>
+          <div className="mt-8 flex flex-wrap items-center gap-6">
             <a
               href="#contacto"
               className="inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-bold uppercase tracking-widest text-[oklch(0.13_0.06_320)] transition hover:scale-[1.03]"
@@ -65,16 +68,13 @@ export function Hero() {
         {/* Goat polaroid */}
         <div
           className="relative md:col-span-5 flex justify-center md:justify-end"
-          style={{ transform: `translateY(${y * -0.08}px)`, animation: "revealScale 0.8s 0.3s ease both" }}
+          style={{ transform: mounted ? `translateY(${y * -0.08}px)` : undefined }}
         >
           <div className="relative">
-            {/* Halo */}
             <div className="absolute inset-0 -z-10 rounded-full bg-[oklch(0.82_0.10_350/0.5)] blur-3xl scale-90 animate-pulse-glow" />
-            {/* Blocks */}
             <div className="absolute -inset-6 -z-10 rotate-[-6deg] rounded-[2.5rem] bg-[oklch(0.75_0.19_50/0.8)] mix-blend-multiply" />
             <div className="absolute -inset-3 -z-10 rotate-[3deg] rounded-[2rem] border-2 border-white/70" />
 
-            {/* Polaroid */}
             <div className="relative rotate-[-3deg] bg-white/95 p-3 pb-12 shadow-[0_30px_60px_rgba(0,0,0,0.45)]">
               <div className="relative overflow-hidden">
                 <Image src="/goat-pink.png" alt="KVRAS — cabra rosa con actitud" width={260} height={340} className="w-[260px] object-cover" />
@@ -84,11 +84,9 @@ export function Hero() {
               <p className="mt-3 font-display text-center text-sm tracking-[0.3em] text-black/70">KVRAS · ROLL 001</p>
             </div>
 
-            {/* Stickers */}
             <span className="absolute -top-4 right-2 z-10 rotate-[10deg] rounded-full bg-[oklch(0.82_0.10_350)] px-4 py-2 font-display text-lg tracking-wider shadow-[var(--shadow-glow)]">¡HOLA!</span>
             <span className="absolute bottom-4 -right-6 z-10 rotate-[-6deg] border-2 border-white bg-[oklch(0.13_0.06_320/0.95)] px-3 py-1 font-display text-xs tracking-[0.3em]">EST · MMXXIV</span>
 
-            {/* Badge */}
             <div className="absolute -bottom-8 -left-10 hidden md:block h-32 w-32 animate-spin-slow">
               <svg viewBox="0 0 120 120" className="h-full w-full">
                 <defs>
