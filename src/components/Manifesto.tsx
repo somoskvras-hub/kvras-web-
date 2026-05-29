@@ -36,7 +36,7 @@ export function Manifesto() {
               </div>
 
               <div className="relative rounded-3xl overflow-hidden" style={{ background: "var(--grad-yp)" }}>
-                <Image src="/goat-selfie.png" alt="Cabra KVRAS tomándose una selfie" width={480} height={460} className="relative mx-auto max-h-[460px] w-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.35)]" />
+                <Image src="/goat-selfie.webp" alt="Cabra KVRAS tomándose una selfie" width={480} height={460} className="relative mx-auto max-h-[460px] w-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.35)]" />
               </div>
             </div>
 

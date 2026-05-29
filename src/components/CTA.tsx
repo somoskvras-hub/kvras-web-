@@ -62,7 +62,7 @@ export function CTA() {
             <div className="relative">
               <div className="absolute inset-0 -z-10 rounded-full opacity-40 blur-3xl scale-90 animate-pulse-glow" style={{ background: "oklch(0.88 0.18 95 / 0.4)" }} />
               <Image
-                src="/goat-cta.png"
+                src="/goat-cta.webp"
                 alt="Cabra KVRAS con actitud y chaqueta naranja"
                 width={480}
                 height={480}

@@ -7,7 +7,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-8">
             <div className="mb-6">
-              <Image src="/logo.png" alt="KVRAS" width={160} height={60} className="h-12 w-auto" />
+              <Image src="/logo.webp" alt="KVRAS" width={160} height={60} className="h-12 w-auto" />
             </div>
             <p className="font-display text-[clamp(22px,3vw,28px)] leading-tight max-w-md">
               Creatividad <span className="text-grad">con dirección.</span>

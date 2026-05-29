@@ -77,7 +77,7 @@ export function Hero() {
 
             <div className="relative rotate-[-3deg] bg-white/95 p-3 pb-12 shadow-[0_30px_60px_rgba(0,0,0,0.45)]">
               <div className="relative overflow-hidden">
-                <Image src="/goat-pink.png" alt="KVRAS — cabra rosa con actitud" width={260} height={340} className="w-[260px] object-cover" />
+                <Image src="/goat-pink.webp" alt="KVRAS — cabra rosa con actitud" width={260} height={340} className="w-[260px] object-cover" />
                 <span className="absolute -top-3 left-6 h-6 w-20 rotate-[-12deg] bg-[oklch(0.88_0.18_95/0.8)] mix-blend-screen" />
                 <span className="absolute -top-3 right-8 h-6 w-16 rotate-[8deg] bg-[oklch(0.82_0.10_350/0.8)] mix-blend-screen" />
               </div>
