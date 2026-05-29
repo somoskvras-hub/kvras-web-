@@ -17,8 +17,7 @@ export function Footer() {
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-[oklch(0.72_0.04_320)] mb-4">Síguenos</p>
             <ul className="flex flex-col gap-2 text-sm">
-              <li><a href="#" className="hover:text-[oklch(0.88_0.18_95)] transition">Instagram</a></li>
-              <li><a href="#" className="hover:text-[oklch(0.88_0.18_95)] transition">TikTok</a></li>
+              <li><a href="https://www.instagram.com/kvras.cl/" target="_blank" rel="noopener noreferrer" className="hover:text-[oklch(0.88_0.18_95)] transition">Instagram</a></li>
               <li><a href="#" className="hover:text-[oklch(0.88_0.18_95)] transition">LinkedIn</a></li>
             </ul>
             <a
