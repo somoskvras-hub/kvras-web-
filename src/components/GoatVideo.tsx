@@ -1,7 +1,6 @@
 import { Reveal } from "./Reveal";
 
-const VIDEO_URL =
-  "https://1c88edde-e45f-405a-b6e6-0a8ed446a9af.lovableproject.com/__l5e/assets-v1/cf0fe0fa-520c-472d-a64d-923f65cf450a/goat-video.mp4";
+const VIDEO_URL = "/goat-video.mp4";
 
 export function GoatVideo() {
   return (
