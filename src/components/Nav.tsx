@@ -26,7 +26,7 @@ export function Nav() {
         }`}
       >
         <a href="#top" className="flex items-center">
-          <Image src="/logo.webp" alt="KVRAS — Central Creativa" width={160} height={60} className="h-12 w-auto" priority />
+          <Image src="/logo.png" alt="KVRAS — Central Creativa" width={160} height={60} className="h-12 w-auto" priority />
         </a>
 
         {/* Desktop */}
@@ -64,7 +64,7 @@ export function Nav() {
       {open && (
         <div className="fixed inset-0 z-[60] flex flex-col bg-grad-social md:hidden">
           <div className="flex items-center justify-between px-6 py-4">
-            <Image src="/logo.webp" alt="KVRAS" width={120} height={45} className="h-10 w-auto" />
+            <Image src="/logo.png" alt="KVRAS" width={120} height={45} className="h-10 w-auto" />
             <button aria-label="Cerrar" onClick={() => setOpen(false)} className="p-2 text-3xl text-white">×</button>
           </div>
           <nav className="flex flex-col gap-6 px-8 pt-16">
